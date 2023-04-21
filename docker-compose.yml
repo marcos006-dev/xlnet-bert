@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  bert:
+    build:
+      context: ./bert
+      dockerfile: Dockerfile
+    volumes:
+      - ./bert:/app
+    working_dir: /app
+    command: python main.py
+
+  xlnet:
+    build:
+      context: ./xlnet
+      dockerfile: Dockerfile
+    volumes:
+      - ./xlnet:/app
+    working_dir: /app
+    command: python main.py
